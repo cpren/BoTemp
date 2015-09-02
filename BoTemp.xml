@@ -65,7 +65,12 @@
                             </value>
                             <next>
                               <block type="oled_drawtext" id="109">
-                                <field name="TEXT">You need to increase your body temperature!!</field>
+                                <field name="TEXT">You need to increase</field>
+                                <next>
+                                  <block type="oled_drawtext" id="142">
+                                    <field name="TEXT">your body temperature!!!</field>
+                                  </block>
+                                </next>
                               </block>
                             </next>
                           </block>
