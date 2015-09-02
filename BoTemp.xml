@@ -10,7 +10,7 @@
       <block type="oled_setcursor" id="41" inline="true">
         <value name="STARTX">
           <block type="math_number" id="48">
-            <field name="NUM">10</field>
+            <field name="NUM">25</field>
           </block>
         </value>
         <value name="STARTY">
@@ -79,7 +79,7 @@
                                 </value>
                                 <next>
                                   <block type="oled_drawtext" id="142">
-                                    <field name="TEXT">your body temperature!!!</field>
+                                    <field name="TEXT">your body temperature</field>
                                   </block>
                                 </next>
                               </block>
