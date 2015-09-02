@@ -1,5 +1,5 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_whileUntil" id="56" inline="false" x="101" y="260">
+  <block type="controls_whileUntil" id="56" inline="false" x="91" y="159">
     <field name="MODE">WHILE</field>
     <value name="NUMBER">
       <block type="math_number" id="72">
@@ -34,6 +34,33 @@
                         <field name="NUM">10</field>
                       </block>
                     </value>
+                    <next>
+                      <block type="controls_if" id="79" inline="false">
+                        <value name="IF0">
+                          <block type="logic_compare" id="93" inline="true">
+                            <field name="OP">LT</field>
+                            <value name="A">
+                              <block type="sensor_spectrometer" id="86">
+                                <field name="LIGHT">IR940</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="100">
+                                <field name="NUM">90</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="oled_drawtext" id="109">
+                            <field name="TEXT">You need to increase your body temperature!!</field>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="oled_cleardisplay" id="118"></block>
+                        </next>
+                      </block>
+                    </next>
                   </block>
                 </next>
               </block>
