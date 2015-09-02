@@ -7,94 +7,90 @@
       </block>
     </value>
     <statement name="DO">
-      <block type="oled_cleardisplay" id="25">
+      <block type="oled_setcursor" id="41" inline="true">
+        <value name="STARTX">
+          <block type="math_number" id="48">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+        <value name="STARTY">
+          <block type="math_number" id="49">
+            <field name="NUM">10</field>
+          </block>
+        </value>
         <next>
-          <block type="oled_setcursor" id="41" inline="true">
-            <value name="STARTX">
-              <block type="math_number" id="48">
-                <field name="NUM">10</field>
-              </block>
-            </value>
-            <value name="STARTY">
-              <block type="math_number" id="49">
-                <field name="NUM">10</field>
+          <block type="oled_drawnumber" id="16" inline="true">
+            <value name="NUMBER">
+              <block type="sensor_spectrometer" id="7">
+                <field name="LIGHT">IR940</field>
               </block>
             </value>
             <next>
-              <block type="oled_drawnumber" id="16" inline="true">
-                <value name="NUMBER">
-                  <block type="sensor_spectrometer" id="7">
-                    <field name="LIGHT">IR940</field>
+              <block type="robot_delay" id="58" inline="true">
+                <value name="DELAY">
+                  <block type="math_number" id="65">
+                    <field name="NUM">10</field>
                   </block>
                 </value>
                 <next>
-                  <block type="robot_delay" id="58" inline="true">
-                    <value name="DELAY">
-                      <block type="math_number" id="65">
-                        <field name="NUM">10</field>
-                      </block>
-                    </value>
-                    <next>
-                      <block type="controls_if" id="79" inline="false">
-                        <mutation else="1"></mutation>
-                        <value name="IF0">
-                          <block type="logic_compare" id="93" inline="true">
-                            <field name="OP">LT</field>
-                            <value name="A">
-                              <block type="sensor_spectrometer" id="86">
-                                <field name="LIGHT">IR940</field>
-                              </block>
-                            </value>
-                            <value name="B">
-                              <block type="math_number" id="100">
-                                <field name="NUM">90</field>
-                              </block>
-                            </value>
+                  <block type="controls_if" id="79" inline="false">
+                    <mutation else="1"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="93" inline="true">
+                        <field name="OP">LT</field>
+                        <value name="A">
+                          <block type="sensor_spectrometer" id="86">
+                            <field name="LIGHT">IR940</field>
                           </block>
                         </value>
-                        <statement name="DO0">
-                          <block type="oled_setcursor" id="133" inline="true">
-                            <value name="STARTX">
-                              <block type="math_number" id="140">
-                                <field name="NUM">0</field>
-                              </block>
-                            </value>
-                            <value name="STARTY">
-                              <block type="math_number" id="141">
-                                <field name="NUM">20</field>
-                              </block>
-                            </value>
+                        <value name="B">
+                          <block type="math_number" id="100">
+                            <field name="NUM">90</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="oled_setcursor" id="133" inline="true">
+                        <value name="STARTX">
+                          <block type="math_number" id="140">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="STARTY">
+                          <block type="math_number" id="141">
+                            <field name="NUM">20</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="oled_drawtext" id="109">
+                            <field name="TEXT">You need to increase</field>
                             <next>
-                              <block type="oled_drawtext" id="109">
-                                <field name="TEXT">You need to increase</field>
+                              <block type="oled_setcursor" id="143" inline="true">
+                                <value name="STARTX">
+                                  <block type="math_number" id="144">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="STARTY">
+                                  <block type="math_number" id="145">
+                                    <field name="NUM">30</field>
+                                  </block>
+                                </value>
                                 <next>
-                                  <block type="oled_setcursor" id="143" inline="true">
-                                    <value name="STARTX">
-                                      <block type="math_number" id="144">
-                                        <field name="NUM">0</field>
-                                      </block>
-                                    </value>
-                                    <value name="STARTY">
-                                      <block type="math_number" id="145">
-                                        <field name="NUM">30</field>
-                                      </block>
-                                    </value>
-                                    <next>
-                                      <block type="oled_drawtext" id="142">
-                                        <field name="TEXT">your body temperature!!!</field>
-                                      </block>
-                                    </next>
+                                  <block type="oled_drawtext" id="142">
+                                    <field name="TEXT">your body temperature!!!</field>
                                   </block>
                                 </next>
                               </block>
                             </next>
                           </block>
-                        </statement>
-                        <statement name="ELSE">
-                          <block type="oled_cleardisplay" id="118"></block>
-                        </statement>
+                        </next>
                       </block>
-                    </next>
+                    </statement>
+                    <statement name="ELSE">
+                      <block type="oled_cleardisplay" id="118"></block>
+                    </statement>
                   </block>
                 </next>
               </block>
