@@ -60,15 +60,29 @@
                             </value>
                             <value name="STARTY">
                               <block type="math_number" id="141">
-                                <field name="NUM">30</field>
+                                <field name="NUM">20</field>
                               </block>
                             </value>
                             <next>
                               <block type="oled_drawtext" id="109">
                                 <field name="TEXT">You need to increase</field>
                                 <next>
-                                  <block type="oled_drawtext" id="142">
-                                    <field name="TEXT">your body temperature!!!</field>
+                                  <block type="oled_setcursor" id="143" inline="true">
+                                    <value name="STARTX">
+                                      <block type="math_number" id="144">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                    <value name="STARTY">
+                                      <block type="math_number" id="145">
+                                        <field name="NUM">30</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="oled_drawtext" id="142">
+                                        <field name="TEXT">your body temperature!!!</field>
+                                      </block>
+                                    </next>
                                   </block>
                                 </next>
                               </block>
